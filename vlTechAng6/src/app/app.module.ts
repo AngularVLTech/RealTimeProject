@@ -9,6 +9,8 @@ import { CatalogViewComponentComponent } from './catalog-view-component/catalog-
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 //import {HttpClient,HttpErrorResponse, HttpClientModule} from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 const coreRoutes: Routes = [
   { path: 'catalog', component: CatalogViewComponentComponent },
   { path: 'home', component: HomeViewComponentComponent },
@@ -33,7 +35,7 @@ const coreRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(coreRoutes),
-     
+    NgbModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

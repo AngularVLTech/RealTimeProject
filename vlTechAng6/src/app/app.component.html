@@ -1,14 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="textAlign">
-  <h1>
-    Welcome to {{ title }} !
-    <!-- <input type="text" [(ngModel)]="content" (click)="getText()"/> -->
-    {{content}}
-    <input [(ngModel)]="content"type="text" (focus)="getText()"/>
-    <input [(ngModel)]="title"type="text" (keydown)="getText()"/>
-  </h1>
-  <h3>Routing</h3>
-  <hr>
   <div class="container">
     <a routerLinkActive="active" 
        routerLink="/login">Login</a> |
@@ -24,70 +13,5 @@
       routerLink="/register">Form Registration</a>
     <router-outlet></router-outlet>
   </div>
-  <hr>
-<h1> Directives</h1>
-  <p *ngIf="ifCondition">
-    Expression is true and ngIf is true.
-    This paragraph is in the DOM.
-  </p>
-  <p *ngIf="!ifCondition">
-    Expression is false and ngIf is false.
-    This paragraph is not in the DOM.
-  </p>
-  {{ifCondition}}
-<p *ngIf="ifCondition else elsePart">
-    this is true part for if else condition
-</p>
-<ng-template #elsePart>
-<p> this is else block</p>
-</ng-template>
-<button (click)="getData()"> Get Data</button>
-<ul *ngFor="let collection of collections">
-  <li>
-      {{collection.id}} --- {{collection.name}} ---{{collection.emotion}}
-  </li>
-</ul>
 
-<h2>IF and For Directives Examples.</h2>list length : {{countryList.length}}
- <div *ngIf="countryList.length > 0; then template1; else template2"></div>
-<ng-template #template1>
-<ul *ngFor="let person of countryList">
-  <li *ngIf="person.country ==='India'"
-      class="text-success">{{ person.name | lowercase }} ({{ person.country | uppercase }})
-  </li>
-  <li *ngIf="person.country === 'USA'"
-      class="text-primary">{{ person.name | lowercase }} ({{ person.country | uppercase }})
-  </li>
-  <li *ngIf="person.country === 'HK'"
-      class="text-danger">{{ person.name | lowercase }} ({{ person.country | uppercase }})
-  </li>
-  <li *ngIf="person.country !== 'HK' && person.country !== 'UK' && person.country !== 'USA'"
-      class="text-warning">{{ person.name | lowercase }} ({{ person.country | uppercase }})
-  </li>
-</ul>
-</ng-template>
-
-<ng-template #template2>
-  No Data Avaliable.
-</ng-template>
-
-<hr>
-<h4>NgSwitch</h4>
-<ul *ngFor="let person of countryList"
-    [ngSwitch]="person.country"> 
-
-  <li *ngSwitchCase="'India'" 
-      class="text-success">{{ person.name }} ({{ person.country | uppercase}})
-  </li>
-  <li *ngSwitchCase="'USA'"
-      class="text-primary">{{ person.name }} ({{ person.country }})
-  </li>
   
-  <li *ngSwitchDefault 
-      class="text-warning">
-      <p *ngIf="person.country !== 'HK'"> {{ person.name }} ({{ person.country }})</p>
-  </li>
-</ul>
-<hr>
-  
-</div>

@@ -42,6 +42,7 @@ export class RegisterFormComponent implements OnInit {
           passWord:data.password,
           }
         };
+        this.registerForm.controls.firstName;
         this.model.push(myPostObject);
       //   this.http.post(this.url, this.model)
       //   .subscribe(response => {
