@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 //import {HttpClient,HttpErrorResponse, HttpClientModule} from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 const coreRoutes: Routes = [
   { path: 'catalog', component: CatalogViewComponentComponent },
@@ -28,7 +30,9 @@ const coreRoutes: Routes = [
     HomeViewComponentComponent,
     CatalogViewComponentComponent,
     DashboardComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

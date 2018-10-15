@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
+//import { routerNgProbeToken } from '@angular/router/src/router_module';
+import { ActivatedRoute, Router } from '@angular/router';
+//import { Router } from '@angular/router';  
 
 @Component({
   selector: 'app-register-form',
@@ -12,7 +15,7 @@ export class RegisterFormComponent implements OnInit {
   submitted = false;
   model: any[] = [];
   private url = 'https://jsonplaceholder.typicode.com/posts';
-    constructor(private formBuilder: FormBuilder) { }
+    constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -51,6 +54,8 @@ export class RegisterFormComponent implements OnInit {
       //   },(err: HttpErrorResponse) => {
       //     console.log(err);
       // });
-      alert('SUCCESS!! :\n\n' + JSON.stringify(myPostObject));
+      //alert('SUCCESS!! :\n\n' + JSON.stringify(myPostObject));
+
+      this.router.navigate(['login']);
     }
 }
