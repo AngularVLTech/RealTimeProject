@@ -1,3 +1,20 @@
-<p>
-  catalog-view-component works!
-</p>
+<p>service</p>
+<hr>
+<button (click)="getServiceData()"> Click </button>
+<p>{{servideInfo}}</p>
+<p><strong>Single user data from git</strong></p>
+<div>
+  <li>Login :{{data?.login}}</li>
+  <li>Avatar Url :{{data?.avatar_url}}</li>
+  <li>Url :{{data?.url}}</li>
+  <li>Created :{{data?.created_at}}</li>
+</div>
+<hr>
+<p> <strong>All users data from git</strong></p>
+<div *ngFor="let data of allUsers">
+  <li>Login :<b>{{data.login}}</b></li>
+  <li>Avatar Url :<b>{{data.avatar_url}}</b></li>
+  <li>Url :<b>{{data.url}}</b></li>
+  <li>Created :<b>{{data.created_at}}</b></li>
+  <hr>
+</div>

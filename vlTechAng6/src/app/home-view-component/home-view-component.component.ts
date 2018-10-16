@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-home-view-component',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-view-component.component.css']
 })
 export class HomeViewComponentComponent implements OnInit {
-
-  constructor() { }
+  homeData: any;
+  constructor( private apiService: ApiService) { }
 
   ngOnInit() {
+    let dataSevice = this.apiService.getData('this is a service');
+    this.homeData = dataSevice;
   }
 
 }

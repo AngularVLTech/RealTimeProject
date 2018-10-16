@@ -8,10 +8,11 @@ import { HomeViewComponentComponent } from './home-view-component/home-view-comp
 import { CatalogViewComponentComponent } from './catalog-view-component/catalog-view-component.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
-//import {HttpClient,HttpErrorResponse, HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { ApiService } from './api.service';
 
 const coreRoutes: Routes = [
   { path: 'catalog', component: CatalogViewComponentComponent },
@@ -40,8 +41,9 @@ const coreRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(coreRoutes),
     NgbModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
